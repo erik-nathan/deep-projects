@@ -1,4 +1,4 @@
-# loja
+# deep_project
 
 ## Project setup
 ```
