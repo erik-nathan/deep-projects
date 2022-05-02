@@ -14,7 +14,7 @@ export default {
     CategoryMenu
   },
   created() {
-    axios.get('http://localhost:3000/products').then( response => {
+    axios.get('http://localhost:3000/mac').then( response => {
       console.log(response);
     })
   }
