@@ -1,32 +1,46 @@
 {
-  "mac": [
-      {
-          "id": 1,
-          "name": "Duplo Burguer",
-          "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa",
-          "price": 25.0,
-          "offer": true
-      },
-      {
-          "id": 2,
-          "name": "Triplo Burguer",
-          "description": "Pão, maionese, 3 carnes de 180g, alface, tomate, bacon e cebola roxa",
-          "price": 32.0,
-          "offer": true
-      },
-      {
-          "id": 3,
-          "name": "Chicken Burguer",
-          "description": "Pão, maionese, carne de frango, alface, tomate e queijo",
-          "price": 16.0,
-          "offer": false
-      },
-      {
-          "id": 4,
-          "name": "Kids Burguer",
-          "description": "Pão, maionese, 1 hamburguer de 180g e 1 fatia de queijo cheddar",
-          "price": 12.0,
-          "offer": false
-      }
-  ]
+    "mac": [
+        {
+            "id": 1,
+            "name": "MacBook Pro 13 P",
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 256 GB¹",
+            "price": 16.645,
+            "offer": true
+        },
+        {
+            "id": 2,
+            "name": "MacBook Pro 14 P",
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 512 GB¹",
+            "price": 25.979,
+            "offer": true
+        },
+        {
+            "id": 3,
+            "name": "MacBook Air",
+            "description": "Chip M1 com CPU de oito núcleos e GPU de sete núcleos, ssd de 256 GB",
+            "price": 12.508,
+            "offer": false
+        },
+        {
+            "id": 4,
+            "name": "iMac",
+            "description": "SSD de 256 GB¹, Memória unificada de 8 GB, Tela Retina 4.5K de 24 polegadas²",
+            "price": 21.739,
+            "offer": false
+        },
+        {
+            "id": 5,
+            "name": "Mac mini",
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos de Armazenamento de 256 GB",
+            "price": 8.370,
+            "offer": false
+        },
+        {
+            "id": 6,
+            "name": "Mac Pro",
+            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB",
+            "price": 164.095,
+            "offer": false
+        }
+    ]
 }
