@@ -39,8 +39,11 @@ export default {
         { label: "Acessorios", icon: "Acessorios", id: "acessorios" },
         { label: "Mac", icon: "Mac", id: "mac" },
       ],
-      selectedCategory: "iphones",
+      selectedCategory: "",
     };
+  },
+  mounted() {
+    this.onCategoryClick("Iphones");
   },
   methods: {
     onCategoryClick(id) {

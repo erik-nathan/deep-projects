@@ -42,5 +42,14 @@
             "price": 164.095,
             "offer": false
         }
+    ],
+    "Ipad": [
+        {
+            "id": 1,
+            "name": "Ipad Pro",
+            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB",
+            "price": 18.095,
+            "offer": false
+        }
     ]
 }
