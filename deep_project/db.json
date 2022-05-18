@@ -3,52 +3,186 @@
         {
             "id": 1,
             "name": "MacBook Pro 13 P",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 256 GB¹",
-            "price": 16.645,
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 256 GB¹, 32 de Mem. Ram",
+            "price": 16645,
             "offer": true
         },
         {
             "id": 2,
             "name": "MacBook Pro 14 P",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 512 GB¹",
-            "price": 25.979,
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 512 GB¹, 16 de Mem. Ram",
+            "price": 25979,
             "offer": true
         },
         {
             "id": 3,
             "name": "MacBook Air",
-            "description": "Chip M1 com CPU de oito núcleos e GPU de sete núcleos, ssd de 256 GB",
-            "price": 12.508,
+            "description": "Chip M1 com CPU de oito núcleos e GPU de sete núcleos, ssd de 256 GB, design moderno",
+            "price": 12508,
             "offer": false
         },
         {
             "id": 4,
             "name": "iMac",
-            "description": "SSD de 256 GB¹, Memória unificada de 8 GB, Tela Retina 4.5K de 24 polegadas²",
-            "price": 21.739,
+            "description": "SSD de 256 GB¹, Memória unificada de 8 GB, Tela Retina 4.5K de 24 polegadas², 32 Mem. Ram",
+            "price": 21739,
             "offer": false
         },
         {
             "id": 5,
             "name": "Mac mini",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos de Armazenamento de 256 GB",
-            "price": 8.370,
+            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos de Armazenamento de 256 GB, 8 Mem. Ram",
+            "price": 8378,
             "offer": false
         },
         {
             "id": 6,
             "name": "Mac Pro",
-            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB",
-            "price": 164.095,
+            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB, 64 Mem. Ram",
+            "price": 164095,
             "offer": false
         }
     ],
-    "Ipad": [
+    "ipad": [
         {
             "id": 1,
-            "name": "Ipad Pro",
-            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB",
-            "price": 18.095,
+            "name": "iPad mini",
+            "description": "Roxo, 256 GB, Wi-Fi, Apple Pencil e Smart Folio",
+            "price": 7391,
+            "offer": false
+        },
+        {
+            "id": 2,
+            "name": "iPad Air",
+            "description": "Rosa, 256 GB, Wi-Fi, Apple Pencil e teclados",
+            "price": 8273,
+            "offer": false
+        },
+        {
+            "id": 3,
+            "name": "iPad",
+            "description": "Prateado, 256 GB, Wi-Fi, Apple Pencil e Smart Folio",
+            "price": 5306,
+            "offer": false
+        }
+    ],
+     "iphones": [
+        {
+            "id": 1,
+            "name": "iPhone 12",
+            "description": "Verde, Tela de 6,1 polegadas, 256 GB",
+            "price": 7999,
+            "offer": false
+        },
+        {
+            "id": 2,
+            "name": "iPhone 13 mini",
+            "description": "Meia-noite, Tela de 5,4 polegadas, 512GB",
+            "price": 9272,
+            "offer": false
+        },
+        {
+            "id": 3,
+            "name": "iPhone 13 Pro Max",
+            "description": "Azul-Sierra, Tela de 6,7 polegadas, 1 TB",
+            "price": 14972,
+            "offer": false
+        },
+        {
+            "id": 4,
+            "name": "iPhone 12 Pro",
+            "description": "Estrelar, 128 GB, tela responsiva que surpreende.",
+            "price": 4699,
+            "offer": false
+        },
+        {
+            "id": 5,
+            "name": "iPhone SE",
+            "description": "Branco, 128 GB, Tela de 5.8 polegadas",
+            "price": 5499,
+            "offer": false
+        }
+    ],
+
+    "watch": [
+        {
+            "id": 1,
+            "name": "Apple Watch Nike",
+            "description": "Pulseira esportiva Nike resistente.",
+            "price": 5022,
+            "offer": false
+        },
+        {
+            "id": 2,
+            "name": "Apple Watch SE",
+            "description": "A pulseira esportiva macia. Cor ouro rose",
+            "price": 3932,
+            "offer": false
+        },
+        {
+            "id": 3,
+            "name": "Apple Watch S. 7",
+            "description": "Pulseira esportiva. Cor Cinza escuro",
+            "price": 5022,
+            "offer": false
+        },
+        {
+            "id": 4,
+            "name": "Apple Watch S. 3",
+            "description": "Pulseira esportiva cor branco gelo.",
+            "price": 2463,
+            "offer": false
+        }
+    ],
+
+    "acessorios": [
+        {
+            "id": 1,
+            "name": "AirPods Pro",
+            "description": "Com cancelamento de ruído. Cor Vermelha",
+            "price": 2826,
+            "offer": false
+        },
+        {
+            "id": 2,
+            "name": "AirPods Max",
+            "description": "Recarrega seus aparelhos com ultra velocidade.",
+            "price": 358,
+            "offer": false
+        },
+        {
+            "id": 3,
+            "name": "AirTag",
+            "description": "Com o AirTag, fica muito fácil encontrar suas coisas.",
+            "price": 35800,
+            "offer": false
+        },
+        {
+            "id": 4,
+            "name": "Capa de Silicone",
+            "description": "Com MagSafe para iPhone 13 Pro",
+            "price": 57500,
+            "offer": false
+        },
+        {
+            "id": 5,
+            "name": "Carteira de Couro",
+            "description": "Carteira com MagSafe para Iphone",
+            "price": 2826,
+            "offer": false
+        },
+        {
+            "id": 6,
+            "name": "AirPods Max",
+            "description": "Pensado para um ajuste impecável.",
+            "price": 6590,
+            "offer": false
+        },
+        {
+            "id": 7,
+            "name": "MagSafe",
+            "description": "Pensado para um ajuste impecável.",
+            "price": 6590,
             "offer": false
         }
     ]
