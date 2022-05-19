@@ -2,18 +2,21 @@
   <div class="home">
     <CategoryMenu />
     <ItemsList /> 
+    <Cart />
   </div>
 </template>
 
 <script>
 import CategoryMenu from '@/components/CategoryMenu.vue'
 import ItemsList from '@/components/ItemsList.vue'
+import Cart from '../components/cart.vue'
 
 export default {
   name: 'HomeView',
   components: {
     CategoryMenu,
-    ItemsList
+    ItemsList,
+    Cart
   },
 }
 </script>
