@@ -14,8 +14,12 @@
 </template>
 
 <script>
+
+import Mixin from '@/mixins/mixins';
+
 export default {
     name: 'Item',
+    mixins: [Mixin],
     filters: {
         currency(value){
             return `R$ ${value.toLocaleString('pt-br', {minimumFractionDigits:2})}`
@@ -32,6 +36,9 @@ export default {
     methods: {
         addToCart(){
             this.$store.dispatch('addToCart', this.item);
+
+            if(this.isDesktop()) return;
+            this.$router.push({ name: 'addToCart', params: { id: this.item.id } })
         }
     }
 

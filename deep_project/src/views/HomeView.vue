@@ -17,7 +17,6 @@ import Mixin from '@/mixins/mixins'
 import CartIcon from '@/assets/icons/cart.svg'
 
 
-
 export default {
   name: 'HomeView',
   components: {
