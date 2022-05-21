@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="cart-icon" v-if="isSmallScreen()">
+    <router-link to="/cart" class="cart-icon" v-if="isSmallScreen()">
        <CartIcon />
-    </div>
+    </router-link>
     <CategoryMenu />
     <ItemsList /> 
     <Cart v-if="isDesktop()" />

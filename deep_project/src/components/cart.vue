@@ -1,5 +1,6 @@
 <template>
   <div class="cart">
+      <router-link to="/" class="cart--go-back">- Voltar</router-link>
       <h2 class="cart--title"> Seu Pedido </h2>
       <CartItem v-for="item in cartList" :key="item.id" :item="item"/>
   </div>
@@ -31,7 +32,21 @@ export default {
          &--title {
              font-weight: 600;
              font-size: 24px;
+             margin-top: 50px;
              color: @write;
+         }
+
+          &--go-back {
+             font-weight: 600;
+             font-size: 18px;
+             text-decoration: none;
+             color: @write;
+         }
+
+         @media @tablets {
+             width: 100%;
+             min-width: unset;
+             padding: 50px 20px 20px;
          }
     }
 
