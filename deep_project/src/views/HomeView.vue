@@ -1,8 +1,9 @@
 <template>
   <div class="home">
+    <CartIcon />
     <CategoryMenu />
     <ItemsList /> 
-    <Cart />
+    <Cart v-if="isDesktop()" />
   </div>
 </template>
 
@@ -10,14 +11,20 @@
 import CategoryMenu from '@/components/CategoryMenu.vue'
 import ItemsList from '@/components/ItemsList.vue'
 import Cart from '../components/cart.vue'
+import Mixin from '@/mixins/mixins'
+import CartIcon from '@/assets/icons/cart.svg'
+
+
 
 export default {
   name: 'HomeView',
   components: {
     CategoryMenu,
     ItemsList,
-    Cart
+    Cart, 
+    CartIcon
   },
+  mixins: [Mixin]
 }
 </script>
 
