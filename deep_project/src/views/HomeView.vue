@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <CartIcon />
+    <div class="cart-icon" v-if="isSmallScreen()">
+       <CartIcon />
+    </div>
     <CategoryMenu />
     <ItemsList /> 
     <Cart v-if="isDesktop()" />
@@ -31,6 +33,17 @@ export default {
 <style scoped lang="less">
   .home{
     display: flex;
+
+    .cart-icon{
+      width: 42px;
+      height: 42px;
+      background: @blue;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 20px 20px auto;
+    }
 
     @media @tablets {
       flex-direction: column;
