@@ -110,7 +110,7 @@ export default {
     @media @tablets {
         width: 100%;
         height: fit-content;
-        border: 1px solid @blue;
+        // border: 1px solid @blue;
         display: flex;
         margin: 10px 0;
         padding: 10px 20px;

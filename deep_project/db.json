@@ -3,42 +3,42 @@
         {
             "id": "0001",
             "name": "MacBook Pro 13 P",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 256 GB¹, 32 de Mem. Ram",
+            "description": "Chip M1, SSD de 256 GB¹, 32 de Mem. Ram",
             "price": 16645,
             "offer": true
         },
         {
             "id": "0002",
             "name": "MacBook Pro 14 P",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos, SSD de 512 GB¹, 16 de Mem. Ram",
+            "description": "Chip M1, SSD de 512 GB¹, 16 de Mem. Ram",
             "price": 25979,
             "offer": true
         },
         {
             "id": "0003",
-            "name": "MacBook Air",
-            "description": "Chip M1 com CPU de oito núcleos e GPU de sete núcleos, ssd de 256 GB, design moderno",
+            "name": "iMac",
+            "description": "Chip M1 , ssd de 256 GB, design moderno",
             "price": 12508,
             "offer": false
         },
         {
             "id": "0004",
-            "name": "iMac",
-            "description": "SSD de 256 GB¹, Memória unificada de 8 GB, Tela Retina 4.5K de 24 polegadas², 32 Mem. Ram",
+            "name": "MacBook Air",
+            "description": "Chip M1, SSD de 256 GB¹, 32 Mem. Ram",
             "price": 21739,
             "offer": false
         },
         {
             "id": "0005",
             "name": "Mac mini",
-            "description": "Chip M1 com CPU de 8 núcleos e GPU de 8 núcleos de Armazenamento de 256 GB, 8 Mem. Ram",
+            "description": "Chip M1, Armazenamento de 256 GB, 8 Mem. Ram",
             "price": 8378,
             "offer": false
         },
         {
             "id": "0006",
             "name": "Mac Pro",
-            "description": "Intel Xeon W de 8 núcleos e 3,5 GHz, Radeon Pro 8 GB de memória GDDR6 SSD de 512 GB, 64 Mem. Ram",
+            "description": "Radeon Pro 8 GB, SSD de 512 GB, 64 Mem. Ram",
             "price": 164095,
             "offer": false
         }
