@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
     props: {
@@ -26,12 +26,11 @@ export default {
 .item--quantity {
     display: flex;
     align-items: center;
-    padding: 25px;
 
     .number {
         font-weight: 500;
         font-size: 18px;
-        color: @write;
+        color: @blue;
         width: 28px;
         text-align: center;
     }
@@ -42,6 +41,8 @@ export default {
         cursor: pointer;
         background: none;
         border: 0;
+        color: @write;
+
 
         &focus {
             outline: 0;

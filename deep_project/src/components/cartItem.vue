@@ -1,6 +1,6 @@
 <template>
   <div class="item">
-      <Quantity :item="item" />
+      <Quantity :item="item"/>
       <div class="item--img-container">
         <img class="item--img" :src="imagePath" >
       </div>
@@ -14,11 +14,12 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import Quantity from './Quantity.vue'
+import { mapActions } from 'vuex';
+import Quantity from './Quantity.vue';
+
 export default {
     name: 'CartItem',
-    
+
     components: {
         Quantity
     },
@@ -71,7 +72,7 @@ export default {
                 background: none;
                 border: 0;
 
-                &focus {outline: 0;}
+                &:focus {outline: 0;}
             }
         }
         
