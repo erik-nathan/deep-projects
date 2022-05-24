@@ -4,10 +4,11 @@
     <Item :item="item" class="add-cart--item" />
     <div class="add-cart--container">
       <span>Quantidade</span>
-      <Quantity :item="item" />
+      <Quantity :item="item" :useStore="false" />
     </div>
     <p class="add-cart--observations">Observações:</p>
     <textarea v-model="observations" rows="10"></textarea>
+    <button> Adicionar ao carrinho</button>
   </div>
 </template>
 
@@ -37,8 +38,7 @@ export default {
   },
   created() {
     axios.get(`http://localhost:3000/${this.selectedCategory}/${this.id}`).then((response) => {
-      this.item = response.data;
-      this.item.quantity = 1;
+      this.item = {quantity:1, ...response.data }
     });
   }
 };
@@ -89,6 +89,14 @@ export default {
     background-color: @bg-color;
     color: @write;
     padding: 20px 20px;
+  }
+
+  button{
+    width: calc(100%-40px);
+    position:fixed;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
   }
 }
 </style>
