@@ -14,7 +14,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
-    "feather-icons": "^4.28.0",
+    "feather-icons": "^4.29.0",
     "netlify-cli": "^6.9.28",
     "netlify-lambda": "^2.0.14",
     "v-mask": "^2.2.4",

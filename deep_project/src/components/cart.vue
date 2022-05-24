@@ -10,6 +10,7 @@
             <span>Total: </span>
             <span class="price">{{ getCartTotal | currency }}</span>
         </div>
+        <div v-html="circleIcon"></div>
     </div>
 </template>
 
@@ -17,6 +18,7 @@
 import CartItem from './cartItem';
 import { mapGetters } from 'vuex';
 import Mixin from '@/mixins/mixins';
+import feather from 'feather-icons';
 
 export default {
     name: 'Cart',
@@ -38,6 +40,9 @@ export default {
         },
         hasItems() {
             return this.cartList.length;
+        },
+        circleIcon() {
+            return feather.icons.circle.toSvg();
         }
     }
 }
