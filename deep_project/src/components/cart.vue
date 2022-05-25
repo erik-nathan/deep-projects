@@ -4,7 +4,7 @@
         <h2 class="cart--title"> Seu Pedido </h2>
         <p v-if="!hasItems" class="cart--p">Seu carrinho ainda está vazio.</p>
         <transition-group name="list">
-        <CartItem v-for="item in cartList" :key="item.id" :item="item" />
+            <CartItem v-for="item in cartList" :key="item.id" :item="item" />
         </transition-group>
         <div class="cart--total" v-if="hasItems">
             <span>Total: </span>
@@ -17,7 +17,6 @@
 import CartItem from './cartItem';
 import { mapGetters } from 'vuex';
 import Mixin from '@/mixins/mixins';
-
 
 export default {
     name: 'Cart',
