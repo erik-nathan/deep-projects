@@ -10,8 +10,6 @@
             <span>Total: </span>
             <span class="price">{{ getCartTotal | currency }}</span>
         </div>
-        <button @click="showModal = true">Open Modal</button>
-        <Modal :show="showModal" @on-modal-close="showModal = false">Teste</Modal>
     </div>
 </template>
 
@@ -19,24 +17,17 @@
 import CartItem from './cartItem';
 import { mapGetters } from 'vuex';
 import Mixin from '@/mixins/mixins';
-import feather from 'feather-icons';
-import Modal from './Modal';
+
 
 export default {
     name: 'Cart',
     mixins: [Mixin],
     components: {
-    CartItem,
-    Modal
+    CartItem
     },
     filters: {
         currency(value) {
             return `R$ ${value.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
-        }
-    },
-    data() {
-        return {
-            showModal: false
         }
     },
     computed: {
@@ -48,9 +39,6 @@ export default {
         },
         hasItems() {
             return this.cartList.length;
-        },
-        circleIcon() {
-            return feather.icons.circle.toSvg();
         }
     }
 }
