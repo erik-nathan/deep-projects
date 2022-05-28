@@ -48,7 +48,7 @@ export default {
   methods: {
     onCategoryClick(id) {
       this.selectedCategory = id;
-      this.$store.dispatch('changeCategory', id);
+      this.$store.dispatch("changeCategory", id);
     },
     isActive(id) {
       return this.selectedCategory === id;
@@ -106,19 +106,19 @@ export default {
   }
 
   @media @tablets {
-      width: 100%;
-      height: fit-content;
-      background: @bg-color;
+    width: 100%;
+    height: fit-content;
+    background: @bg-color;
 
-      ul {
-          display: flex;
-          margin: 20px;  
-          overflow: scroll;
+    ul {
+      display: flex;
+      margin: 20px;
+      overflow: scroll;
 
-          li {
-              min-width: 78px;
-          }
+      li {
+        min-width: 78px;
       }
+    }
   }
 }
 </style>
