@@ -8,6 +8,7 @@
       <div class="content">
           <h3 class="item--name">{{item.name}}</h3>
           <a class="item--observation"> Adicionar Observação</a>
+          <p class="item--observation-text">{{item.observations}}</p>
       </div>
       <p class="item--price">{{item.price | currency}} </p>
   </div>
@@ -104,6 +105,11 @@ export default {
           font-size: 12px;
           color: @colorDesc;
           text-decoration: underline;
+        }
+
+         &--observation-text{
+          font-size: 12px;
+          color: @colorDesc;
         }
 
         .content{
