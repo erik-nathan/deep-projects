@@ -5,8 +5,10 @@ import './assets/css/global.less'
 import router from './router'
 import {store} from './store/store'
 import 'es6-promise/auto'
+import VueMask from 'v-mask'
 
 
+Vue.use(VueMask);
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
