@@ -28,6 +28,7 @@
 
         <div class="adress">
             <p class="section-title">Endereço</p>
+        
             <div class="delivery-type">
                 <div class="radio-options">
                     <input type="radio" name="delivery-type" id="store" value="store" v-model="deliveryType"/>
@@ -42,6 +43,11 @@
                 </div>
             </div>
         </div>
+             <div class="adress-card" v-if="isDeliveryType && hasAdressInfo && savedAdress">
+                <p>{{formData.city.value}} - {{formData.cep.value}}</p>
+                <p> {{formData.street.value}} , {{formData.number.value}} </p>
+               
+            </div>
          <a @click="onShowAdressModal" v-if="isDeliveryType">{{addressButtonLabel}}</a>
         </div>
     </form>
@@ -177,7 +183,8 @@ export default {
                 },
             }, 
             showAdressModal: false,
-            deliveryType: ''
+            deliveryType: '',
+            savedAdress: false
         };
     },
     computed: {
@@ -228,6 +235,7 @@ export default {
         validateAdressForm() {
             this.triggerAdressFormValidations();
             if(!this.isAddressFormValid) return;
+            this.savedAdress = true;
             this.showAdressModal = false;
         }
     }
@@ -300,6 +308,7 @@ export default {
 
         .adress{
             .delivery-type{
+            color: @write;
             display: flex;
 
         }
@@ -313,6 +322,22 @@ export default {
             margin: 15px 0;
             display: block;
             width: fit-content;
+        }
+        
+        .adress-card {
+            border-radius: 8px;
+            border: 1px solid @write;
+            padding: 10px 20px;
+            margin: 15px 0; 
+            width: fit-content;
+
+
+            p{
+                font-weight: normal;
+                font-size: 16px;
+                color: @write;
+                margin: 5px 0;
+            }
         }
 
         }
