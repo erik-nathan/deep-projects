@@ -30,19 +30,19 @@
             <p class="section-title">Endereço</p>
             <div class="delivery-type">
                 <div class="radio-options">
-                    <input type="radio" name="delivery-type" id="store" checked>
+                    <input type="radio" name="delivery-type" id="store" value="store" v-model="deliveryType"/>
                     <label for="store">Retirar na loja</label>
                 </div>
 
 
                 <div class="delivery-type">
                 <div class="radio-options">
-                    <input type="radio" name="delivery-type" id="delivery">
+                    <input type="radio" name="delivery-type" id="delivery" value="delivery" v-model="deliveryType"/>
                     <label for="delivery">Delivery</label>
                 </div>
             </div>
         </div>
-         <a @click="onShowAdressModal">Adicionar endereço</a>
+         <a @click="onShowAdressModal" v-if="isDeliveryType">{{addressButtonLabel}}</a>
         </div>
     </form>
      <button class="primary-button" @click="orderItens">Concluir pedido</button>
@@ -92,7 +92,7 @@
             </div>
          </div>   
          
-         <button class="primary-button">Adicionar</button>
+         <button class="primary-button" @click="validateAdressForm">Adicionar</button>
          <button class="secondary-button" @click="hideAdressModal">Cancelar</button>
 
         </div>
@@ -128,7 +128,7 @@ export default {
                     label: 'Celular*', 
                     valid: true,
                     isValid: () => {
-                        this.formData.cellphone.valid = this.formData.cellphone.value.length === 16;
+                        this.formData.cellphone.valid = !!this.formData.cellphone.value.length === 16;
                     }
                 },
 
@@ -139,7 +139,7 @@ export default {
                     label: 'CEP*', 
                     valid: true,
                     isValid: () => {
-                        this.formData.cep.valid = this.formData.cep.value.length;
+                        this.formData.cep.valid = !!this.formData.cep.value.length;
                     }
                 },
 
@@ -150,7 +150,7 @@ export default {
                     label: 'Cidade*', 
                     valid: true,
                     isValid: () => {
-                        this.formData.city.valid = this.formData.city.value.length;
+                        this.formData.city.valid = !!this.formData.city.value.length;
                     }
                 },
 
@@ -161,7 +161,7 @@ export default {
                     label: 'Rua*', 
                     valid: true,
                     isValid: () => {
-                        this.formData.street.valid = this.formData.street.value.length;
+                        this.formData.street.valid = !!this.formData.street.value.length;
                     }
                 }, 
 
@@ -172,29 +172,66 @@ export default {
                     label: 'Número*', 
                     valid: true,
                     isValid: () => {
-                        this.formData.number.valid = this.formData.number.value.length;
+                        this.formData.number.valid = !!this.formData.number.value.length;
                     }
                 },
             }, 
-            showAdressModal: false
+            showAdressModal: false,
+            deliveryType: ''
         };
     },
+    computed: {
+        isAddressFormValid() {
+            let isValid = true;
+            isValid &= this.formData.cep.valid;
+            isValid &= this.formData.city.valid;
+            isValid &= this.formData.street.valid;
+            isValid &= this.formData.number.valid;
+            return isValid;
+        },
+        isDeliveryType() {
+            return this.deliveryType === 'delivery';
+        },
+        hasAdressInfo () {
+            return (
+            this.formData.cep.value|| 
+            this.formData.city.value||
+            this.formData.street.value||
+            this.formData.number.value
+            );
+        },
+        addressButtonLabel() {
+            return this.hasAdressInfo ? 'Editar Endereço' : 'Adicionar endereço '
+        },
+    },
+
     methods: {
         triggerValidations() {
             this.formData.name.isValid();
             this.formData.cellphone.isValid();
         },
+        triggerAdressFormValidations() {
+            this.formData.cep.isValid();
+            this.formData.city.isValid();
+            this.formData.street.isValid();
+            this.formData.number.isValid();
+        },
         orderItens() {
-            this.triggerValidations();
+            this.triggerValidations(); 
         }, 
         onShowAdressModal() {
             this.showAdressModal = true;
         },
         hideAdressModal() {
             this.showAdressModal = false; 
+        }, 
+        validateAdressForm() {
+            this.triggerAdressFormValidations();
+            if(!this.isAddressFormValid) return;
+            this.showAdressModal = false;
         }
     }
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -208,6 +245,13 @@ export default {
     .input-field {
             display: flex;
             flex-direction: column;
+
+
+            .error-message{
+                font-size: 12px;
+                color: @error-color;
+
+                }
 
             label {
             color: @write;
@@ -228,6 +272,8 @@ export default {
             .input-field {
                 margin: 0;
                 width: 100%;
+
+
 
                 & + .input-field {
                     width: 30%;
@@ -252,12 +298,6 @@ export default {
 
         
 
-        .error-message{
-            font-size: 12px;
-            color: @error-color;
-
-        }
-
         .adress{
             .delivery-type{
             display: flex;
@@ -270,6 +310,9 @@ export default {
             font-size: 12px;
             text-decoration: underline;
             cursor: pointer;
+            margin: 15px 0;
+            display: block;
+            width: fit-content;
         }
 
         }
