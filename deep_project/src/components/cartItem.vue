@@ -68,11 +68,11 @@ export default {
     onCloseObservationModal(){
         this.showObservationModal = false
     },
-    saveObservation(){
-
-    }
-    
-  },
+     saveObservation() {
+            this.$store.dispatch('addObservation', this.item);
+            this.showObservationModal = false;
+        }
+ },
 };
 </script>
 
@@ -186,6 +186,12 @@ export default {
       order: 4;
       padding: 0 20px;
       margin: 5px 0;
+    }
+
+    .modal-content {
+      h1 {
+        font-size: 20px;
+      }
     }
   }
 }
