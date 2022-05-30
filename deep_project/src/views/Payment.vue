@@ -36,6 +36,13 @@ export default {
     color: @write;
     }
   }
+
+    @media @tablets {
+        &--content{
+          padding:50px 20px;
+        }
+    }
+
  }
 
 </style>
