@@ -170,16 +170,37 @@
         </button>
       </div>
     </Modal>
+
+    <Modal
+      :show="showInvalidAdressModal"
+      @on-modal-close="hideInvalidAdressModal"
+    >
+      <div class="invalid-adress-modal">
+        <span v-html="warningIcon"> </span>
+        <span class="p">
+          Na modalidade delivery é necessário adicionar um endereço válido.
+        </span>
+      </div>
+    </Modal>
+
+    <Modal :show="showSucessModal" @on-modal-close="hideSucessModal">
+      <div class="sucess-modal">
+        <span v-html="sucessIcon" class="icon"> </span>
+        <span class="p"> Pedido realizado com sucesso! </span>
+      </div>
+    </Modal>
   </div>
 </template>
 
 <script>
 import Modal from "@/components/Modal";
+import feather from "feather-icons";
 
 export default {
   components: {
     Modal,
   },
+
   data() {
     return {
       formData: {
@@ -202,7 +223,7 @@ export default {
           valid: true,
           isValid: () => {
             this.formData.cellphone.valid =
-              !!this.formData.cellphone.value.length === 16;
+              !!this.formData.cellphone.value.length;
           },
         },
 
@@ -251,18 +272,32 @@ export default {
         },
       },
       showAdressModal: false,
+      showInvalidAdressModal: false,
+      showSucessModal: false,
       deliveryType: "",
       paymentType: "credit-card",
       savedAdress: false,
     };
   },
   computed: {
+    sucessIcon() {
+      return feather.icons["check-circle"].toSvg();
+    },
+    warningIcon() {
+      return feather.icons["alert-triangle"].toSvg();
+    },
     isAddressFormValid() {
       let isValid = true;
       isValid &= this.formData.cep.valid;
       isValid &= this.formData.city.valid;
       isValid &= this.formData.street.valid;
       isValid &= this.formData.number.valid;
+      return isValid;
+    },
+    isUserFormDataValid() {
+      let isValid = true;
+      isValid &= this.formData.cellphone.valid;
+      isValid &= this.formData.name.valid;
       return isValid;
     },
     isDeliveryType() {
@@ -285,6 +320,10 @@ export default {
     triggerValidations() {
       this.formData.name.isValid();
       this.formData.cellphone.isValid();
+      if (this.isDeliveryType) {
+        this.triggerAdressFormValidations();
+        this.showInvalidAdressModal = !this.isAddressFormValid;
+      }
     },
     triggerAdressFormValidations() {
       this.formData.cep.isValid();
@@ -294,9 +333,14 @@ export default {
     },
     orderItens() {
       this.triggerValidations();
+      if (!this.isUserFormDataValid || !this.isAddressFormValid) return;
+      this.showSucessModal = true;
     },
     onShowAdressModal() {
       this.showAdressModal = true;
+    },
+    hideSucessModal() {
+      this.$router.push({ name: "Home" });
     },
     hideAdressModal() {
       this.showAdressModal = false;
@@ -306,6 +350,9 @@ export default {
       if (!this.isAddressFormValid) return;
       this.savedAdress = true;
       this.showAdressModal = false;
+    },
+    hideInvalidAdressModal() {
+      this.showInvalidAdressModal = false;
     },
   },
 };
@@ -428,21 +475,37 @@ export default {
     }
   }
 
+  .invalid-adress-modal,
+  .sucess-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+
+    .icon {
+      margin-bottom: 15px;
+    }
+    .p {
+      color: @write;
+    }
+  }
+
   @media @tablets {
     width: 100%;
     padding: 0;
 
     .modal-content {
       button + button {
-          margin-left: 5px;
-        }
-      }
-    }
-
-    .adress-container {
-      .input-field + .input-field {
         margin-left: 5px;
       }
     }
   }
+
+  .adress-container {
+    .input-field + .input-field {
+      margin-left: 5px;
+    }
+  }
+}
 </style>

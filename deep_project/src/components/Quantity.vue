@@ -38,7 +38,7 @@ export default {
       default: true,
     },
   },
-  date() {
+  data() {
     return {
       showModal: false,
     };
