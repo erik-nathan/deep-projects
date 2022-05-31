@@ -1,0 +1,19 @@
+name: Continuous Integrations Deep Store
+on:
+  push:
+    paths-ignore:
+    - ".github/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - users: actions/checkout@v1
+      - name: Build
+        env:
+          NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
+          NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
+        run: |
+          npm
+          json-server --watch db.json
+          npm run serve
+          npx netlify-cli deploy --dir=public --prod
