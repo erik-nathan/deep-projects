@@ -335,7 +335,7 @@ export default {
       this.triggerValidations();
       if (!this.isUserFormDataValid || !this.isAddressFormValid) return;
       this.showSucessModal = true;
-      const phone = '5581985943548'
+      const phone = '5581998250080'
       var endereco = this.formData.cep.value + ", " + this.formData.city.value + ", " + this.formData.street.value + ", " + this.formData.number.value
       endereco = endereco.length > 8 ? endereco : endereco = "Retirar na loja."
 
