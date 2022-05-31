@@ -335,7 +335,10 @@ export default {
       this.triggerValidations();
       if (!this.isUserFormDataValid || !this.isAddressFormValid) return;
       this.showSucessModal = true;
-      const phone = '5581998250080'
+      const phone = '5581985943548'
+      var endereco = this.formData.cep.value + ", " + this.formData.city.value + ", " + this.formData.street.value + ", " + this.formData.number.value
+      endereco = endereco.length > 8 ? endereco : endereco = "Retirar na loja."
+
       let text = `
         - - - - - D E E P  S T O R E - - - - -
         --------------------------------------
@@ -343,11 +346,13 @@ export default {
         --------------------------------------
         Contato: ${this.formData.cellphone.value}
         --------------------------------------
-        Endereço: ${this.formData.cep.value}, ${this.formData.city.value}, ${this.formData.street.value}, ${this.formData.number.value}
+        Endereço: ${endereco}
         --------------------------------------
         Pedido: 
         ${this.$store.state.cartList.map(item => {
+          if(item.observations == undefined) {item.observations = "Sem observações."}
           return `
+          
             ${item.quantity}x ${item.name}
             OBS: ${item.observations}
           `
@@ -355,6 +360,7 @@ export default {
       `
       text = window.encodeURIComponent(text);
       window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`)
+      this.$store.state.cartList = []
     },
     onShowAdressModal() {
       this.showAdressModal = true;
