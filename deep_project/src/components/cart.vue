@@ -1,6 +1,6 @@
 <template>
     <div class="cart">
-        <router-link to="/" class="cart--go-back" v-if="isSmallScreen()">⬅ Voltar</router-link>
+        <router-link to="/" class="cart--go-back">⬅ Voltar</router-link>
         <h2 class="cart--title"> Seu Pedido </h2>
         <div class="cart--content">
             <p v-if="!hasItems" class="cart--p">Seu carrinho ainda está vazio.</p>
@@ -62,10 +62,7 @@ export default {
     flex-direction: column;
 
     &--go-back {
-        font-weight: 600;
-        font-size: 18px;
-        text-decoration: none;
-        color: @write;
+        display: none;
     }
 
     &--title {
@@ -110,14 +107,24 @@ export default {
         transform: translateY(30px);
     }
 
-    @media @tablets {
+    @media @small-desktop {
         //  background: @bg-color;
         width: 100%;
+        max-width: 800px;
+        margin: auto;
         min-width: unset;
         padding: 50px 20px 20px;
 
         .payment-button {
             width: 100%;
+        }
+
+        &--go-back{
+            display: block;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            color: @write;
         }
     }
 }
