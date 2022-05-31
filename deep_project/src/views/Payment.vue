@@ -4,7 +4,7 @@
             <router-link to="/" class="payment--go-back">⬅ Voltar</router-link>
             <Order />
       </div>      
-      <Cart v-if="isDesktop()" />
+      <Cart class="cart-menu" />
   </div>
 </template>
 
@@ -37,8 +37,12 @@ export default {
     }
   }
 
-    @media @tablets {
-        &--content{
+    @media @small-desktop {
+        .cart-menu {
+          display: none;
+        }
+
+        &--content {
           padding:50px 20px;
         }
     }
