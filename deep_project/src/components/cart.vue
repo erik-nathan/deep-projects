@@ -54,10 +54,10 @@ export default {
 <style lang="less" scoped>
 .cart {
     background: @light-grey;
-    width: 643px;
+    width: 523px;
     height: 100vh;
-    min-width: 643px;
-    padding: 50px;
+    min-width: 520px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
 

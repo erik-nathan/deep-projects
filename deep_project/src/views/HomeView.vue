@@ -1,39 +1,48 @@
 <template>
   <div class="home">
-    <router-link to="/cart" class="cart-icon" v-if="isSmallScreen()">
-       <CartIcon />
+    <router-link to="/cart" class="cart-icon">
+      <CartIcon />
     </router-link>
     <CategoryMenu />
-    <ItemsList /> 
-    <Cart v-if="isDesktop()" />
+    <ItemsList />
+    <Cart class="cart-menu" />
   </div>
 </template>
 
 <script>
-import CategoryMenu from '@/components/CategoryMenu.vue'
-import ItemsList from '@/components/ItemsList.vue'
-import Cart from '../components/cart.vue'
-import Mixin from '@/mixins/mixins'
-import CartIcon from '@/assets/icons/cart.svg'
-
+import CategoryMenu from "@/components/CategoryMenu.vue";
+import ItemsList from "@/components/ItemsList.vue";
+import Cart from "../components/cart.vue";
+import Mixin from "@/mixins/mixins";
+import CartIcon from "@/assets/icons/cart.svg";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     CategoryMenu,
     ItemsList,
-    Cart, 
-    CartIcon
+    Cart,
+    CartIcon,
   },
-  mixins: [Mixin]
-}
+  mixins: [Mixin],
+};
 </script>
 
 <style scoped lang="less">
-  .home{
-    display: flex;
+.home {
+  display: flex;
 
-    .cart-icon{
+  .cart-icon {
+    display: none;
+  }
+
+  @media @small-desktop {
+    flex-direction: column;
+    .cart-menu {
+      display: none;
+    }
+
+    .cart-icon {
       width: 42px;
       height: 42px;
       background: @blue;
@@ -43,9 +52,6 @@ export default {
       justify-content: center;
       margin: 20px 20px 20px auto;
     }
-
-    @media @tablets {
-      flex-direction: column;
-    }
   }
+}
 </style>
