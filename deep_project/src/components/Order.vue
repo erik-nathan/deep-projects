@@ -352,7 +352,6 @@ export default {
         ${this.$store.state.cartList.map(item => {
           if(item.observations == undefined) {item.observations = "Sem observações."}
           return `
-          
             ${item.quantity}x ${item.name}
             OBS: ${item.observations}
           `
