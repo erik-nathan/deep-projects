@@ -89,6 +89,7 @@ export default {
         font-size: 18px;
         text-align: right;
         margin-top: 30px;
+        color: @write;
 
         .price {
             color: @blue;

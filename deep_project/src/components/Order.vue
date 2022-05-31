@@ -74,7 +74,7 @@
 
       <div class="payment">
         <p class="section-title">Pagamento</p>
-        <p>Método de pagamento</p>
+        <p class="method-pay">Método de pagamento</p>
         <div class="radio-container">
           <div class="radio-options">
             <input
@@ -335,6 +335,26 @@ export default {
       this.triggerValidations();
       if (!this.isUserFormDataValid || !this.isAddressFormValid) return;
       this.showSucessModal = true;
+      const phone = '5581998250080'
+      let text = `
+        - - - - - D E E P  S T O R E - - - - -
+        --------------------------------------
+        Cliente: ${this.formData.name.value}
+        --------------------------------------
+        Contato: ${this.formData.cellphone.value}
+        --------------------------------------
+        Endereço: ${this.formData.cep.value}, ${this.formData.city.value}, ${this.formData.street.value}, ${this.formData.number.value}
+        --------------------------------------
+        Pedido: 
+        ${this.$store.state.cartList.map(item => {
+          return `
+            ${item.quantity}x ${item.name}
+            OBS: ${item.observations}
+          `
+        })}
+      `
+      text = window.encodeURIComponent(text);
+      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`)
     },
     onShowAdressModal() {
       this.showAdressModal = true;
@@ -362,7 +382,6 @@ export default {
 .order {
   width: 720px;
   margin: 30px auto;
-  background: #292929;
   border-radius: 8px;
   padding: 30px 50px;
 
@@ -411,6 +430,10 @@ export default {
       font-weight: 600;
       font-size: 27px;
       margin-bottom: 20px;
+    }
+
+    .method-pay{
+      color: @write;
     }
 
     .radio-container {
