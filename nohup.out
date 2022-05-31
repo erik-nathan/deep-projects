@@ -1,0 +1,50 @@
+
+  \{^_^}/ hi!
+
+  Loading db.json
+  Done
+
+  Resources
+  http://localhost:3000/mac
+  http://localhost:3000/ipad
+  http://localhost:3000/iphones
+  http://localhost:3000/watch
+  http://localhost:3000/acessorios
+
+  Home
+  http://localhost:3000
+
+  Type s + enter at any time to create a snapshot of the database
+  Watching...
+
+  Error, can't read from stdin
+  Creating a snapshot from the CLI won't be possible
+
+  \{^_^}/ hi!
+
+  Loading db.json
+  Done
+
+  Resources
+  http://localhost:3000/mac
+  http://localhost:3000/ipad
+  http://localhost:3000/iphones
+  http://localhost:3000/watch
+  http://localhost:3000/acessorios
+
+  Home
+  http://localhost:3000
+
+  Type s + enter at any time to create a snapshot of the database
+  Watching...
+
+  Error, can't read from stdin
+  Creating a snapshot from the CLI won't be possible
+[0mGET /Iphones [36m304[0m 27.948 ms - -[0m
+[0mGET /Iphones [36m304[0m 25.363 ms - -[0m
+[0mGET /iphones [36m304[0m 32.854 ms - -[0m
+[0mGET /Iphones [36m304[0m 32.316 ms - -[0m
+[0mGET /Iphones [36m304[0m 28.789 ms - -[0m
+[0mGET /ipad [36m304[0m 32.036 ms - -[0m
+[0mGET /Iphones [36m304[0m 19.428 ms - -[0m
+[0mGET /Iphones [36m304[0m 30.756 ms - -[0m

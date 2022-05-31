@@ -23,6 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm install -g json-server
-      - run: json-server --watch db.json
+      - run: json-server --watch db.json &
       - run: npm run serve
       - run: npx netlify-cli deploy --dir=public --prod
