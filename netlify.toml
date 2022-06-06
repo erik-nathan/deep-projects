@@ -1,0 +1,8 @@
+[build]
+    functions = "lambda"
+    Command= "npm run prod"
+[[redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/api/:splat"
+    status = 200
+    force = true
