@@ -1,6 +1,7 @@
-const data = require("../db.json");
+import data from "../db.json";
+// const data = require("../db.json");
 
-exports.handler = function (event, context, callback) {
+export function handler (event, context, callback) {
   // let path = event.path.replace('/api', '');
   let path = event.path.split("/api")[1];
   path = path.replace("/", "");
@@ -28,4 +29,4 @@ exports.handler = function (event, context, callback) {
       ? JSON.stringify(data[path].find((item) => item.id === id))
       : JSON.stringify(data[path]),
   });
-};
+}
