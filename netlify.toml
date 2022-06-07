@@ -1,6 +1,6 @@
 [build]
     functions = "lambda"
-    Command= "npm run serve"
+    Command= "npm run prod"
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/api/:splat"
