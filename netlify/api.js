@@ -1,4 +1,4 @@
-const data = require('../db.json');
+const data = require('./db.json');
 
 exports.handler = function(event, context, callback) {
     // let path = event.path.replace('/api', '');
