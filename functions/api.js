@@ -5,7 +5,7 @@ exports.handler = function(event, context, callback) {
     let path = event.path.split('/api')[1];
     path = path.replace('/', '');
     // console.log('path--->', event.path)
-    
+  
     let id = null;
 
     if(path.includes('/')) {
