@@ -1,4 +1,4 @@
-<h1 align="center"> Cadastro de Alunos | CRUD - SpringBoot</h1>
+<h1 align="center"> Deep Store | Vue.Js </h1>
 
 <p align="center">
   <a href="#-grupo">Squad</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
