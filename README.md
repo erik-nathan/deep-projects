@@ -17,7 +17,7 @@
 - :mortar_board: 202002721 | Erik Nathan de Oliveira Batista
 - :mortar_board: 202002088 | Julio Cesar de Barros
 - :mortar_board: 202002043 | Beatriz Lira Martins
-- :mortar_board: 202002043 | Marcos 
+- :mortar_board: 202004793  | Marcos Felipe Vasconcelos de Souza 
 
 ## 🚀 | Tecnologias
 
