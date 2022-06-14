@@ -13,7 +13,7 @@
  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
-## 👨🏽‍🤝‍👨🏽 | **Desenvolvido pelo Squard06 | UNIFG** 
+## 👨🏽‍🤝‍👨🏽 | **Desenvolvido pelo Squard | UNIFG** 
 - :mortar_board: 202002721 | Erik Nathan de Oliveira Batista
 - :mortar_board: 202002088 | Julio Cesar de Barros
 - :mortar_board: 202002043 | Beatriz Lira Martins
